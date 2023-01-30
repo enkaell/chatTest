@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-POSTGRESQL_DATABASE_URL = "postgresql://admin:admin@0.0.0.0:5432/chat"
+POSTGRESQL_DATABASE_URL = "postgresql://admin:admin@db/chat"
 
 engine = create_engine(
     POSTGRESQL_DATABASE_URL

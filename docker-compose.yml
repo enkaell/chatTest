@@ -3,11 +3,10 @@ version: '3.9'
 services:
   web:
     build: .
-    command: bash 'python main.py;pytest'
     volumes:
       - .:/app
     ports:
-      - "8008:8000"
+      - "8000:8000"
     depends_on:
       - db
 
@@ -19,7 +18,14 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=chat
-    expose:
-      - 5432
+    ports:
+      - "5432:5432"
+#  ws_server:
+#    build:
+#      context: ./
+#      dockerfile: ./server/Dockerfile
+#    depends_on:
+#      - web
+#    command: python server.py
 volumes:
   postgres_data:
