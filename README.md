@@ -1,23 +1,22 @@
 # Test task, Socketio chat + FastAPI REST
-## Реализовано:
+## Realised features:
+ - Base API methods with auth through OAuth2 + JWT
+ - Loading, crop and pictures saving in Database
+ - Methods for chats: creating and deletion
+ - Partitial functional of chats based on SocketIO (one socket for message proccessing, other for chat joining)
+ - Pytest
+ - Conterization of Backend and DB
+ - Custom Swagger
 
- - Базовые методы API с аутентификацией и авторизацией через OAuth2 + JWT
- - Загрузка, кроп и сохранение картинок в БД
- - Методы работы с чатами: создание,удаление
- - Частичный функционал чатов на SocketIO (один сокет сервера для обработки сообщений, вступления в чаты)
- - Тестирование методов авторизации с помощью Pytest
- - Контейнеризация БД и АПИ
- - Кастомный сваггер
+## Things to do:
+ - Realise chat based on built-in FastApi websockets
+ - Conf files (deploy or local)
+ - Increase test coverage
+ - Mount sockets to web app (I couldn't)
+ - Conf file for Kubernetes
+ - Custom logging
 
-## Можно реализовать:
- - Работу чата на websockets (из коробки FastAPI)
- - Конфигурационные файлы (деплой, локальная сборка)
- - Большее покрытие тестами + тесты сокетов
- - Примонтировать сокеты к веб-приложению (у меня не получилось)
- - Конфигурационные файлы для Kuber (Ansible playbook (?))
- - Кастомное логгирование
-
-## Запуск
+## Run
 docker compose build && docker compose up 
 
-(не смог обернуть сервер сокета в контейнер, оставил комментарий)
+(sockets weren't containerized)
